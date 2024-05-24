@@ -1,3 +1,4 @@
+/* Basic styles */
 body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
@@ -21,80 +22,52 @@ body {
     width: 90%;
     max-width: 1200px;
     text-align: center;
-    transition: background-color 1.3s ease; background-image: url(video1.mp4); background-size: cover;background-repeat: no-repeat;   
-}
-
-.container:hover {
-    background-color: #111111; 
+    transition: all 0.3s ease;
 }
 
 h1 {
-    font-size: 3.5em;
-    margin-bottom: 30px;
-    transition: color 0.3s ease;  
-}
-
-h1:hover {
-    color: #ffffff;  
-}
-
-.status-boxes {
-    display: flex;
-    justify-content: center;
+    font-size: 2.5em;
     margin-bottom: 20px;
-    transition: transform 0.3s ease; 
 }
 
-.status-boxes:hover {
-    transform: scale(1.05);  
-}
-
-.status-button.present {
-    background-color: #28a745;  
-}
-
-.status-button.absent {
-    background-color: #dc3545;  
-}
-
-.status-button.leave {
-    background-color: #ffc107; 
-}
-
- 
-.status-button:hover {
-    filter: brightness(1.2);  
-    cursor: pointer;  
+/* Status boxes */
+#status-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .status-box {
-    padding: 15px 30px;
-    margin: 0 10px;
-    border-radius: 4px;
-    font-size: 1.2em;
-    color: #fff;
-    transition: transform 0.3s ease, background-color 0.3s ease; 
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
 }
 
 .status-box:hover {
-    transform: scale(1.05); 
-    cursor: pointer;  
+    transform: scale(1.1);
 }
 
- 
-#present-box:hover {
-    background-color: #2f9e44;   transform: scale(1.05);
+#present-box {
+    background-color: #4caf50;
 }
 
-#absent-box:hover {
-    background-color: #d64444;  transform: scale(1.05);
+#absent-box {
+    background-color: #f44336;
 }
 
-#leave-box:hover {
-    background-color: #e6b800;  transform: scale(1.05);
+#leave-box {
+    background-color: #ffc107;
 }
 
-
+/* Table styles */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -109,54 +82,28 @@ th, td {
 }
 
 th {
-    background-color: #000000; 
+    background-color: #000000;
+    text-align: center;
+    border-bottom: 1px solid #ffffff;
+    white-space: nowrap;
+}
+.attendance{text-align: center;}
+#attendance {
+    text-align: center;
 }
 
-#status-boxes {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-table th {
-    text-align: center;
-    border-bottom: 1px solid #000;
-}
- 
 .attendance-present {
-    color: green; text-align: center;
+    color: green;
 }
 
 .attendance-absent {
-    color: red;text-align: center;
+    color: red;
 }
 
 .attendance-leave {
-    color: yellow;text-align: center;
+    color: yellow;
 }
 
-
-.status-box {
-    width: 150px;
-    height: 150px;
-    background-color: #ccc;
-    border-radius: 10px;
-    text-align: center;
-    line-height: 150px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-#present-box {
-    background-color: #4caf50;
-}
-
-#absent-box {
-    background-color: #f44336;
-}
-
-#leave-box {
-    background-color: #ffc107;
-}
 .status-buttons {
     display: flex;
     justify-content: center;
@@ -165,24 +112,29 @@ table th {
 
 .status-button {
     margin: 0 5px;
-}
- 
-th {
-    background-color: #070707;
-    text-align: center;
-    border-bottom: 1px solid #ffffff;
-}
-
- 
-th:nth-child(1) {
-    white-space: nowrap;  
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
- 
-th:nth-child(3) {
-    white-space: nowrap;  
+.status-button.present {
+    background-color: #28a745;
 }
- 
+
+.status-button.absent {
+    background-color: #dc3545;
+}
+
+.status-button.leave {
+    background-color: #ffc107;
+}
+
+.status-button:hover {
+    filter: brightness(1.2);
+}
 
 button {
     padding: 15px 30px;
@@ -199,14 +151,107 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Responsive styles */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .status-box {
+        width: 120px;
+        height: 120px;
+        font-size: 20px;
+        line-height: 120px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
 @media (max-width: 768px) {
-    table, th, td {
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .status-box {
+        width: 100px;
+        height: 100px;
+        font-size: 18px;
+        line-height: 100px;
+    }
+
+    th, td {
         font-size: 1em;
+        padding: 8px;
     }
 
     button {
         padding: 10px 20px;
         font-size: 1em;
     }
+
+    #status-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .status-box {
+        margin-bottom: 10px;
+    }
 }
-.container video{ position: absolute; right: 0; bottom: 0; z-index: -1; }  @media(min-aspect-ratio:16/9){.container  video {width: 150%; height: auto; }}  @media(max-aspect-ratio:16/9){.container  video {width: auto; height: 100%; }}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .status-box {
+        width: 80px;
+        height: 80px;
+        font-size: 16px;
+        line-height: 80px;
+    }
+
+    th, td {
+        font-size: 0.8em;
+        padding: 5px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    #status-boxes {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .status-box {
+        margin: 5px;
+    }
+
+    table, th, td {
+        padding: 5px;
+        font-size: 0.8em;
+    }
+
+    th, td {
+        white-space: nowrap;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
