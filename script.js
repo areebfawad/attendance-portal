@@ -232,6 +232,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     presentCount++;
                     presentButton.classList.add('selected');
                     attendanceCell.textContent = 'Present';
+                    attendanceCell.classList.remove('attendance-absent');
+                    attendanceCell.classList.remove('attendance-leave');
                     attendanceCell.classList.add('attendance-present');
                 }
                 updateCounts();
@@ -246,7 +248,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     absentCount++;
                     absentButton.classList.add('selected');
                     attendanceCell.textContent = 'Absent';
+                    attendanceCell.classList.remove('attendance-present');
+                    attendanceCell.classList.remove('attendance-leave');
                     attendanceCell.classList.add('attendance-absent');
+                     
                 }
                 updateCounts();
             });
@@ -260,6 +265,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     leaveCount++;
                     leaveButton.classList.add('selected');
                     attendanceCell.textContent = 'Leave';
+                    attendanceCell.classList.remove('attendance-absent');
+                    attendanceCell.classList.remove('attendance-present');
                     attendanceCell.classList.add('attendance-leave');
                 }
                 updateCounts();

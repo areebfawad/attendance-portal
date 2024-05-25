@@ -9,8 +9,8 @@ body {
     align-items: flex-start;
     height: 100vh;
     width: 100vw;
-    padding-top: 20px;
-    box-sizing: border-box;
+    padding-top: 20px;      
+    box-sizing: border-box;background-color: #000000;
 }
 
 .container {
@@ -22,7 +22,7 @@ body {
     width: 90%;
     max-width: 1200px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;  
 }
 
 h1 {
@@ -162,8 +162,7 @@ button:hover {
         height: 120px;
         font-size: 20px;
         line-height: 120px;
-    }
-
+    }  table{overflow-x: scroll;}
     th, td {
         padding: 10px;
     }
@@ -255,3 +254,4 @@ button:hover {
         overflow-x: auto;
     }
 }
+ 
