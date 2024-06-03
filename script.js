@@ -1,3 +1,12 @@
+
+const table = document.getElementById('table_container')
+const adjustWidth = () => {
+    const windowWidth = window.innerWidth;
+    table.style.width = windowWidth - 100
+}
+
+adjustWidth()
+
 document.addEventListener('DOMContentLoaded', function() {
     const users = [
         {
